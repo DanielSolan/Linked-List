@@ -1,13 +1,16 @@
 public class LinkedList {
   private Node head;
+  private int numNodes;
 
   public LinkedList() {
     // creates an empty list
     head = null;
+    numNodes = 0;
   }
 
   public LinkedList(int[] values) {
     head = new Node(values[0]); // assuming the array has at leat one element.
+    numNodes = values.length;
     Node adding;
     Node current = head;
     for (int i = 1; i < values.length; i++) {
@@ -34,12 +37,27 @@ public class LinkedList {
       current = current.getNext();
     }
     current.setNext(newNode);
+    numNodes++;
 
   }
 
   public void addFirst(int n) {
     Node newNode = new Node(n);
+    Node current = head;
     head = newNode;
+    numNodes++;
+  }
 
+  public int getSize(){
+    return numNodes;
+  }
+
+  public void remove(int index){
+    int counter = 0;
+    Node current = head;
+    while(counter<index){
+      current = current.getNext();
+    }
+    current.setValue(null);
   }
 }

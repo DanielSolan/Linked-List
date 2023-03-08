@@ -7,7 +7,8 @@ class Main {
     myList.display();
     myList.addNode(99);
     myList.display();
-    myList.addFirst(11);
-    myList.display();
+    //myList.addFirst(11);
+    //myList.display();
+    System.out.println("Size = " + myList.getSize());
   }
 }

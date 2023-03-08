@@ -7,6 +7,10 @@ public class Node {
     next = null;
   }
 
+  public void remove(){
+    value = null;
+  }
+
   public Node getNext() {
     return next;
   }
